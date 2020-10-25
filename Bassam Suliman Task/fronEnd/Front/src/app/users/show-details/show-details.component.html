@@ -1,0 +1,15 @@
+
+<h1>User Detail</h1> <a style="position:absolute; top:10px; right:10px;" routerLink="">Go To Home</a>
+<div class="media">
+    <img src={{userDetails.avatar}} class="align-self-start mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Info</h5>
+      <p><strong>ID: </strong> {{userDetails.id}}</p>
+      <p><strong>Name: </strong> {{userDetails.first_name}} {{userDetails.last_name}}</p>
+      <p><strong>Email: </strong> {{userDetails.email}} </p>
+      <h5 class="mt-0">AD</h5>
+      <p><strong>Company: </strong> {{userad.company}}</p>
+      <p><strong>website: </strong> {{userad.url}} </p>
+      <p><strong>Info: </strong> {{userad.text}} </p>
+    </div>
+  </div>

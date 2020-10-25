@@ -1,0 +1,28 @@
+ <h1 class="d-flex justify-content-center">Users List</h1>
+ <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" >
+     <p><strong>Pages   :</strong>    </p>
+    <div class="btn-group mr-2" role="group" aria-label="First group" *ngFor="let i of arr; let j = index">
+      <button type="button" class="btn btn-secondary" (click)="showpage(j+1)">{{j+1}}</button>
+    </div>
+ </div>
+
+ <h3>page details</h3>
+ <div class="md-form">
+  <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+  [(ngModel)]="searchText" placeholder="Enter text to search" 
+  autofocus>
+  </div>
+<div id="contianerDiv"  >
+
+        <div class="card" style="width: 14rem; "  *ngFor="let item  of Users_list | filter: searchText">
+            <img src={{item.avatar}} class="card-img-top" [routerLink]="['/Details', item.id]">
+            <div class="card-body">
+                <h5 class="card-title">ID:  {{item.id}}</h5>
+                <p class="card-text">{{item.first_name}}  {{item.last_name}}</p>
+                <a [routerLink]="['Details',item.id]"></a>
+                <button type="button" (click)="gotoProductDetails('Details',item.id)" class="btn btn-primary">Go to Details</button>
+            </div>
+        </div>
+   
+
+</div>
